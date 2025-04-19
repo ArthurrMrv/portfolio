@@ -27,11 +27,11 @@
             },
             "contacts": {
                 "description": "all the ways to reach me",
-                "content": "\n    → Email: arthur.morvan6@gmail.com\n    → Phone: +33601051165\n    → Linkedin: https://www.linkedin.com/in/arthur-morvan-363515251/"
+                "content": "    → Email: arthur.morvan6@gmail.com\n    → Phone: +33601051165\n    → Linkedin: https://www.linkedin.com/in/arthur-morvan-363515251/"
             },
             "projects": {
                 "description": "a few projects I have worked on",
-                "content": ""
+                "content": "    → Multimodal-LLMs for image interpretation - Thales restricted\n    → Random Forest coded from scratch - https://github.com/ArthurrMrv/RandomForestFromScratch\n    → Never loose at Wordle again - https://github.com/ArthurrMrv/WordleSolver\n    → Maze generator&solver - https://github.com/ArthurrMrv/maze"
             },
             "clear": {
                 "description": "clear the terminal",
@@ -46,6 +46,9 @@
         "https://github.com/ArthurrMrv": "ArthurrMrv",
         "https://www.linkedin.com/in/arthur-morvan-363515251/": "arthur-morvan-363515251",
         "+33601051165": "+33 6 01 05 11 65",
-        "arthur.morvan6@gmail.com": "arthur.morvan6@gmail.com"
+        "arthur.morvan6@gmail.com": "arthur.morvan6@gmail.com",
+        "https://github.com/ArthurrMrv/RandomForestFromScratch" : "https://github.com/ArthurrMrv/RandomForestFromScratch",
+        "https://github.com/ArthurrMrv/maze" : "https://github.com/ArthurrMrv/maze",
+        "https://github.com/ArthurrMrv/WordleSolver" : "https://github.com/ArthurrMrv/WordleSolver"
     }
 }

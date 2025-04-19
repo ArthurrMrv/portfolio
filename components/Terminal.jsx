@@ -31,35 +31,25 @@ const Terminal = ({ folder_name, commands, error_message, welcome_message, links
 
     const parseCustomLinks = (text, linkMap) => {
         const elements = [];
-        let remainingText = text;
+        let lastIndex = 0;
 
-        while (remainingText.length > 0) {
-            let matchIndex = -1;
-            let matchedUrl = null;
+        // Create a regex that matches any of the keys with word boundaries
+        const escapedUrls = Object.keys(linkMap).map(url =>
+            url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // Escape special regex characters
+        );
+        const pattern = new RegExp(`(^|\\s)(${escapedUrls.join('|')})(?=\\s|$)`, 'g');
 
-            for (const url in linkMap) {
-                const index = remainingText.indexOf(url);
-                if (index !== -1 && (matchIndex === -1 || index < matchIndex)) {
-                    matchIndex = index;
-                    matchedUrl = url;
-                }
-            }
+        let match;
+        while ((match = pattern.exec(text)) !== null) {
+            const before = text.slice(lastIndex, match.index + match[1].length);
+            const matchedUrl = match[2];
 
-            if (matchIndex === -1) {
-                elements.push(<Text key={elements.length}>{remainingText}</Text>);
-                break;
-            }
-
-            // Add text before the match
-            if (matchIndex > 0) {
+            if (before) {
                 elements.push(
-                    <Text key={elements.length}>
-                        {remainingText.slice(0, matchIndex)}
-                    </Text>
+                    <Text key={elements.length}>{before}</Text>
                 );
             }
 
-            // Add the clickable link with the desired label
             elements.push(
                 <Text
                     key={elements.length}
@@ -74,13 +64,16 @@ const Terminal = ({ folder_name, commands, error_message, welcome_message, links
                 </Text>
             );
 
-            // Move past the matched URL
-            remainingText = remainingText.slice(matchIndex + matchedUrl.length);
+            lastIndex = match.index + match[0].length;
+        }
+
+        // Add remaining text after last match
+        if (lastIndex < text.length) {
+            elements.push(<Text key={elements.length}>{text.slice(lastIndex)}</Text>);
         }
 
         return elements;
     };
-
 
     useEffect(() => {
         const focusInput = () => inputRef.current?.focus();
