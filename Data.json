@@ -1,0 +1,51 @@
+{
+    "title": "Arthur Morvan",
+    "links": [
+        {
+            "url": "https://your-resume-link.com",
+            "text": "/resume"
+        },
+        {
+            "url": "mailto:arthur.morvan6@gmail.com",
+            "text": "/contact"
+        },
+        {
+            "url": "https://github.com/ArthurrMrv",
+            "text": "/github"
+        },
+        {
+            "url": "https://www.linkedin.com/in/arthur-morvan-363515251/",
+            "text": "/linkedin"
+        }
+    ],
+    "terminal": {
+        "folder_name" : "arthur@portfolio",
+        "commands": {
+            "info": {
+                "description": "let me pitch you my story",
+                "content": "\nHi, I'm Arthur Morvan — a data-driven problem solver with a passion for turning complexity into clarity. My academic path, from the Toulouse School of Economics to the AIDAMS program at Paris-Saclay University, has equipped me with a solid foundation in applied mathematics, artificial intelligence, and management sciences. I thrive at the intersection of tech and strategy, where data becomes a catalyst for smart decisions and lasting impact.\n\n--------\n\nProfessionally, I've explored the full data pipeline — from engineering and governance to analysis and visualization. Whether reducing image processing times by 80% with generative AI at Thales or improving operational efficiency by over 50% at ESSEC, I aim to make every project count. My technical toolkit includes Python, SQL, Power BI, and more — but what drives me is the impact these tools can have on real-world problems.\n\n--------\n\nOutside of work, I lead initiatives that bring innovation to life. As Vice-President of Kryptosphere, I helped organize international hackathons and collaborated with cutting-edge partners like Google Cloud and Mistral. I'm also passionate about storytelling, music, and sports — because great ideas come from diverse experiences and curious minds."
+            },
+            "contacts": {
+                "description": "all the ways to reach me",
+                "content": "\n    → Email: arthur.morvan6@gmail.com\n    → Phone: +33601051165\n    → Linkedin: https://www.linkedin.com/in/arthur-morvan-363515251/"
+            },
+            "projects": {
+                "description": "a few projects I have worked on",
+                "content": ""
+            },
+            "clear": {
+                "description": "clear the terminal",
+                "content": ""
+            }
+        },
+        "error_message": "zsh: Command not found, type 'help' to see available commands",
+        "welcome_message": "Welcome to my portfolio! Type 'help' to see all the available commands :)"
+    },
+    "links_to_parse": {
+        "https://your-resume-link.com": "My resume",
+        "https://github.com/ArthurrMrv": "ArthurrMrv",
+        "https://www.linkedin.com/in/arthur-morvan-363515251/": "arthur-morvan-363515251",
+        "+33601051165": "+33 6 01 05 11 65",
+        "arthur.morvan6@gmail.com": "arthur.morvan6@gmail.com"
+    }
+}
