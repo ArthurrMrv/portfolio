@@ -8,7 +8,7 @@ import {
     Linking,
 } from 'react-native';
 
-const Header = ({ title, links}) => {
+const Header = ({ title, links }) => {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -18,6 +18,7 @@ const Header = ({ title, links}) => {
 
     const openLink = (url) => {
         Linking.openURL(url);
+        
     };
 
     const renderLinks = () => {
@@ -54,13 +55,13 @@ const styles = StyleSheet.create({
     headerText: {
         color: '#00ff00',
         fontFamily: 'Courier',
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: 'bold',
     },
     timeText: {
         color: '#00ff00',
         fontFamily: 'Courier',
-        fontSize: 12,
+        fontSize: 14,
     },
     links: {
         flexDirection: 'row',
