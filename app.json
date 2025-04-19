@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "first_web_page",
-    "slug": "first_web_page",
+    "name": "portfolio",
+    "slug": "portfolio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
