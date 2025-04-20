@@ -29,15 +29,17 @@ const Header = ({ title, links }) => {
             const blob = new Blob([vcfContent], { type: 'text/vcard' });
             const url = URL.createObjectURL(blob);
 
+            const encodedVCF = encodeURIComponent(vcfContent);
+            const dataUrl = `data:text/vcard;charset=utf-8,${encodedVCF}`;
+
             const link_vcf = document.createElement('a');
-            link_vcf.href = url;
+            link_vcf.href = dataUrl;
+            link_vcf.target = '_blank'; // Opens in new tab — important for mobile
             link_vcf.download = 'Arthur_Morvan.vcf';
+
             document.body.appendChild(link_vcf);
             link_vcf.click();
             document.body.removeChild(link_vcf);
-
-            URL.revokeObjectURL(url);
-
         }
     };
 
