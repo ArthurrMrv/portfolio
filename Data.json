@@ -6,8 +6,9 @@
             "text": "/resume"
         },
         {
-            "url": "mailto:arthur.morvan6@gmail.com",
-            "text": "/contact"
+            "url": "",
+            "text": "/contact",
+            "vcf_content" : "BEGIN:VCARD\nVERSION:3.0\nN:Morvan;Arthur;;;\nFN:Arthur Morvan\nEMAIL:arthur.morvan6@gmail.com\nTEL;TYPE=CELL:+33601051165\nURL;TYPE=pref:https://arthurrmrvs-projects-portfolio.vercel.app/\nEND:VCARD"
         },
         {
             "url": "https://github.com/ArthurrMrv",

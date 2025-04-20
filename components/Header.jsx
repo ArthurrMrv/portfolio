@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     Linking,
     useWindowDimensions,
+    Link
 } from 'react-native';
 
 const SMALL_DEVICE_WIDTH = 515;
@@ -19,16 +20,34 @@ const Header = ({ title, links }) => {
         return () => clearInterval(timer);
     }, []);
 
-    const openLink = (url) => {
-        Linking.openURL(url);
+    const openLink = (link) => {
+        if (link.url) {
+            Linking.openURL(link.url);
+        } else if (link.vcf_content) {
+            const vcfContent = link.vcf_content.trim();
+
+            const blob = new Blob([vcfContent], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+
+            const link_vcf = document.createElement('a');
+            link_vcf.href = url;
+            link_vcf.download = 'Arthur_Morvan.vcf';
+            document.body.appendChild(link_vcf);
+            link_vcf.click();
+            document.body.removeChild(link_vcf);
+
+            URL.revokeObjectURL(url);
+
+        }
     };
+
 
     const isSmallDevice = width < SMALL_DEVICE_WIDTH;
     const styles = getStyles(isSmallDevice);
 
     const renderLinks = () => {
         return links.map((link, index) => (
-            <TouchableOpacity key={index} onPress={() => openLink(link.url)}>
+            <TouchableOpacity key={index} onPress={() => openLink(link)}>
                 <Text style={styles.linkText}>{link.text}</Text>
             </TouchableOpacity>
         ));
@@ -52,7 +71,7 @@ export default Header;
 const getStyles = (isSmallDevice) =>
     StyleSheet.create({
         header: {
-            flexDirection:  isSmallDevice ? 'column' : 'row',
+            flexDirection: isSmallDevice ? 'column' : 'row',
             paddingHorizontal: 10,
             paddingBottom: 5,
             alignItems: isSmallDevice ? 'flex-start' : 'center',
